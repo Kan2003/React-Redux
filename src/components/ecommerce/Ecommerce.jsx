@@ -11,7 +11,6 @@ const Ecommerce = () => {
 
   return (
     <div className="min-h-screen bg-gray-100">
-      {/* Header */}
       <header className="py-4 px-6 bg-white shadow-md flex items-center justify-between">
         <h4
           className="font-bold text-2xl text-gray-800 cursor-pointer hover:text-blue-600 transition"
@@ -47,10 +46,8 @@ const Ecommerce = () => {
         </div>
       </header>
 
-      {/* Main Content */}
       <main className="container mx-auto py-8">
         {!showCart ? (
-          // Product Grid
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {prodcuts.products.map((item) => (
               <div
@@ -88,7 +85,6 @@ const Ecommerce = () => {
             ))}
           </div>
         ) : (
-          // Cart View
           <div className="bg-white rounded-lg shadow-md p-6">
             <h3 className="text-2xl font-bold text-gray-800 text-center mb-6">
               Your Cart ({cartItem.length} Items)

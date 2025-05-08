@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { addtoCart, removeTocart, clearCart } from "../../store/cartSlice";
 import { useSelector, useDispatch } from "react-redux";
-import { data } from "../../utils/data";
+import prodcuts from '../../utils/data.json'
 
 const Ecommerce = () => {
   const state = useSelector((state) => state.cart);
   const dispatch = useDispatch();
   const [showCart, setShowCart] = useState(false);
-  const cartItem = data.filter((item) => state.includes(item.id));
+  const cartItem = prodcuts.products.filter((item) => state.includes(item.id));
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -48,11 +48,11 @@ const Ecommerce = () => {
       </header>
 
       {/* Main Content */}
-      <main className="container mx-auto px-6 py-8">
+      <main className="container mx-auto py-8">
         {!showCart ? (
           // Product Grid
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {data.map((item) => (
+            {prodcuts.products.map((item) => (
               <div
                 key={item.id}
                 className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col transition-transform hover:scale-105"
